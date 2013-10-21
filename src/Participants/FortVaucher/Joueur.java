@@ -1,54 +1,67 @@
-/* 
-Exemple d'implémentation d'un joueur d'Othello. Cette implémentation sert uniquement
-à démontrer le principe, mais n'implémente aucune intelligence: les coups à jouer sont 
-simplement lus à la console!
-*/
-
-// Votre version sera dans Participants.<VosNoms>
 package Participants.FortVaucher;
-
-// Pour l'interopérabilité: il faut une représentation commune des coups!
 
 import Othello.Move;
 
-import java.util.Scanner;
+/**
+ * @author Sébastien Vaucher
+ */
+public class Joueur extends Othello.Joueur
+{
 
-// Utile seulement dans cet exemple, pour lire l'entrée de l'utilisateur à la console
+	private Board board;
 
-// Vous devrez étendre Othello.Joueur pour implémenter votre propre joueur...
-public class Joueur extends Othello.Joueur {
+	/**
+	 * @param depth Alpha-beta algorithm depth
+	 * @param playerID 0 = Red, 1 = Blue
+	 */
+	public Joueur(int depth, int playerID)
+	{
+		super(depth, playerID);
 
-	// depth: profondeur alpha-beta
-	// playerID: 0 = rouge, 1 = bleu
-	public Joueur(int depth, int playerID) {
-		super();
-
-
+		board = new Board(playerID == 0 ? Board.Color.RED : Board.Color.BLUE, super.size);
 	}
-	
-	Scanner stdin = new Scanner(System.in);
 
-	// Méthode appelée à chaque fois que vous devez jouer un coup.
-	// move est le coup joué par l'adversaire
-	public Move nextPlay(Move move) {
-		// Ici, vous devrez
-		// - Mettre à jour votre représentation du jeu en fonction du coup joué par l'adversaire
-		// - Décider quel coup jouer (alpha-beta!!)
-		// - Remettre à jour votre représentation du jeu
-		// - Retourner le coup choisi
-		// Mais ici, on se contente de lire à la console:
-		Move result = null;
-		if (move != null) 
-			System.out.println("Coup adverse: " + move.i + ", " + move.j);
-		System.out.println("Votre coup: ");
-		System.out.print("Colonne (-1 si aucun coup possible): ");
-		int i = stdin.nextInt();
-		if (i != -1) {
-			System.out.print("Ligne: ");
-			int j =  stdin.nextInt();
-			result = new Move(i,j);
-		}
-		return result;
+	/**
+	 * This method is called whenever we have to play
+	 * @param move The opponent's move, which has just happened
+	 * @return Our next move
+	 */
+	@Override
+	public Move nextPlay(Move move)
+	{
+		// Apply the opponent's move to the board
+		if(move != null)
+			board.applyMove(move, false);
+
+
+
+		// BEGIN Temp dumb algorithm
+		Move bestMove = null;
+		int bestAmount = -1;
+		Move currentMove = new Move();
+		for(int i = 0; i < super.size; i++)
+			for(int j = 0; j < super.size; j++)
+			{
+				currentMove.i = i;
+				currentMove.j = j;
+
+				int amount = board.numberOfBoxesFlipped(currentMove, true);
+				if(amount > bestAmount)
+				{
+					bestAmount = amount;
+					bestMove = new Move(i, j);
+				}
+			}
+
+		if(bestAmount <= 0)
+			// This method has to return null when it's not possible to play
+			return null;
+		// END Temp dumb algorithm
+
+		// Apply our move to the board
+		board.applyMove(bestMove, true);
+
+		return bestMove;
 	}
 
 }
