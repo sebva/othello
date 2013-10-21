@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="tournoi">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/tournoi.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
