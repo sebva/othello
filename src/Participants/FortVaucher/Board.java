@@ -3,6 +3,9 @@ package Participants.FortVaucher;
 
 import Othello.Move;
 
+import java.util.List;
+import java.util.LinkedList;
+
 /**
  * This class represents the board of the game.
  * This class has been thoroughly tested !
@@ -32,10 +35,7 @@ public class Board
 
 	public Board(Color ourColor, int nbBoxes)
 	{
-		board = new Color[nbBoxes][nbBoxes];
-		this.ourColor = ourColor;
-		this.theirColor = ourColor == Color.BLUE ? Color.RED : Color.BLUE;
-		this.nbBoxes = nbBoxes;
+		this(ourColor, nbBoxes, true);
 
 		// Board initialization
 		for (int i = 0; i < nbBoxes; i++)
@@ -47,6 +47,26 @@ public class Board
 		board[nbBoxes / 2 - 1][nbBoxes / 2 - 1] = Color.BLUE;
 		board[nbBoxes / 2 - 1][nbBoxes / 2] = Color.RED;
 		board[nbBoxes / 2][nbBoxes / 2 - 1] = Color.RED;
+	}
+
+	private Board(Color ourColor, int nbBoxes, boolean dummy)
+	{
+		board = new Color[nbBoxes][nbBoxes];
+		this.ourColor = ourColor;
+		this.theirColor = ourColor == Color.BLUE ? Color.RED : Color.BLUE;
+		this.nbBoxes = nbBoxes;
+	}
+
+	@Override
+	protected Board clone()
+	{
+		Board board2 = new Board(ourColor, nbBoxes, true);
+
+		for (int i = 0; i < nbBoxes; i++)
+			for (int j = 0; j < nbBoxes; j++)
+				board2.board[i][j] = this.board[i][j];
+
+		return board2;
 	}
 
 	/**
@@ -96,6 +116,31 @@ public class Board
 						}
 					}
 				}
+	}
+
+	public Board applyMoveToNewBoard(Move move, boolean fromOurselves)
+	{
+		Board board2 = this.clone();
+
+		board2.applyMove(move, fromOurselves);
+		return board2;
+	}
+
+	public List<Move> getPossibleMoves(boolean fromOurselves)
+	{
+		List<Move> movesList = new LinkedList<Move>();
+		Move currentMove = new Move();
+		for(int i = 0; i < nbBoxes; i++)
+			for(int j = 0; j < nbBoxes; j++)
+			{
+				currentMove.i = i;
+				currentMove.j = j;
+
+				if(numberOfBoxesFlipped(currentMove, fromOurselves) > 0)
+					movesList.add(currentMove);
+			}
+
+		return movesList;
 	}
 
 	/**
