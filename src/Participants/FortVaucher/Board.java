@@ -147,4 +147,9 @@ public class Board
 		else
 			return amount;
 	}
+
+	public Color[][] getBoard()
+	{
+		return board;
+	}
 }
