@@ -2,26 +2,34 @@ package Participants.FortVaucher;
 
 import Othello.Move;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Sébastien
- * Date: 25.10.13
- * Time: 10:55
- * To change this template use File | Settings | File Templates.
- */
 public class AlphaBeta
 {
+	/**
+	 * Apply the alpha-beta algorithm to find the best move to play
+	 * @param root The Board
+	 * @param depth Depth of the algorithm
+	 * @return A Move object ready to be played
+	 */
 	public static Move alphaBeta(Board root, int depth)
 	{
 		Move move = new Move(-100, -100);
-		minmax(root, 1, Double.POSITIVE_INFINITY, depth, move);
+		alphaBeta2(root, 1, Double.POSITIVE_INFINITY, depth, move);
 		if(move.i != -100 && move.j != -100)
 			return move;
 		else
 			return null;
 	}
 
-	private static double minmax(Board root, int minOrMax, double parentValue, int depth, Move outMove)
+	/**
+	 * The Holy Alpha-Beta Algorithm logic lies in this method
+	 * @param root The current Board object
+	 * @param minOrMax 1 = Max, -1 = Min
+	 * @param parentValue The optVal from the parent node
+	 * @param depth Depth remaining
+	 * @param outMove Output parameter, the optimal move computed will be stored in it. It has to be a valid Move object.
+	 * @return The value of the outMove move
+	 */
+	private static double alphaBeta2(Board root, int minOrMax, double parentValue, int depth, Move outMove)
 	{
 		final boolean fromOurselves = (minOrMax == 1);
 
@@ -36,7 +44,7 @@ public class AlphaBeta
 			double val;
 			{
 				Board newBoard = root.applyMoveToNewBoard(op, fromOurselves);
-				val = minmax(newBoard, -minOrMax, optVal, depth - 1, null);
+				val = alphaBeta2(newBoard, -minOrMax, optVal, depth - 1, null);
 			}
 			if(val * minOrMax > optVal * minOrMax)
 			{

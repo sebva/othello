@@ -7,7 +7,6 @@ import Othello.Move;
  */
 public class Joueur extends Othello.Joueur
 {
-
 	private Board board;
 
 	/**
@@ -34,6 +33,7 @@ public class Joueur extends Othello.Joueur
 		if(move != null)
 			board.applyMove(move, false);
 
+		// Compute the best move to play
 		Move bestMove = AlphaBeta.alphaBeta(board, depth);
 
 		// Apply our move to the board

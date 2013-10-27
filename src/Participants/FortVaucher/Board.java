@@ -35,6 +35,11 @@ public class Board
 		public static final byte NOTHING = 2;
 	}
 
+	/**
+	 * Create a new Board
+	 * @param ourColor The color from the player we represent. Either Color.BLUE or Color.RED
+	 * @param nbBoxes Number of boxes in each dimension
+	 */
 	public Board(byte ourColor, int nbBoxes)
 	{
 		board = new byte[nbBoxes][nbBoxes];
@@ -43,6 +48,9 @@ public class Board
 		this.nbBoxes = nbBoxes;
 	}
 
+	/**
+	 * Initialize the board with Color.NOTHING and the four initial bubbles
+	 */
 	public void initBoard()
 	{
 		// Board initialization
@@ -106,6 +114,12 @@ public class Board
 				}
 	}
 
+	/**
+	 * Clone the Board and apply the move to it. The this Board object is untouched
+	 * @param move The move to apply
+	 * @param fromOurselves true = The player who realized this move is ourselves
+	 * @return The new Board with the move applied to it
+	 */
 	public Board applyMoveToNewBoard(Move move, boolean fromOurselves)
 	{
 		Board board2 = new Board(ourColor, nbBoxes);
@@ -117,6 +131,11 @@ public class Board
 		return board2;
 	}
 
+	/**
+	 * Get a List of every possible moves
+	 * @param fromOurselves true = The player who realized this move is ourselves
+	 * @return A List object of every possible moves
+	 */
 	public List<Move> getPossibleMoves(boolean fromOurselves)
 	{
 		List<Move> movesList = new LinkedList<Move>();
@@ -158,6 +177,14 @@ public class Board
 		return amount;
 	}
 
+	/**
+	 * Compute the number of boxes that will be flipped in the specified direction
+	 * @param move The move to simulate
+	 * @param colIncrement Horizontal direction
+	 * @param rowIncrement Vertical direction
+	 * @param flipColor The opponent's color
+	 * @return The number of boxes that we will gain from this move
+	 */
 	private int numberOfBoxesFlippedInDirection(Move move, int colIncrement, int rowIncrement, byte flipColor)
 	{
 		int col = move.i, row = move.j;
@@ -184,6 +211,10 @@ public class Board
 			return amount;
 	}
 
+	/**
+	 * Is the game finished
+	 * @return True = There are no possible moves
+	 */
 	public boolean isGameOver()
 	{
 		Move currentMove = new Move();
@@ -200,6 +231,11 @@ public class Board
 		return true;
 	}
 
+	/**
+	 * Evaluate the board
+	 * @param fromOurselves true = The move would be played by us
+	 * @return A number representing the evaluation
+	 */
 	public double evaluate(boolean fromOurselves)
 	{
 		return Evaluation.evaluateBoard(board, (fromOurselves ? ourColor : theirColor));
