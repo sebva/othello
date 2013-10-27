@@ -9,6 +9,7 @@ public class Joueur extends Othello.Joueur
 {
 
 	private Board board;
+	private AlphaBeta alphaBeta;
 
 	/**
 	 * @param depth Alpha-beta algorithm depth
@@ -19,6 +20,7 @@ public class Joueur extends Othello.Joueur
 		super(depth, playerID);
 
 		board = new Board(playerID == 0 ? Board.Color.RED : Board.Color.BLUE, super.size);
+		alphaBeta = new AlphaBeta(super.size);
 	}
 
 	/**
@@ -33,33 +35,11 @@ public class Joueur extends Othello.Joueur
 		if(move != null)
 			board.applyMove(move, false);
 
-
-
-		// BEGIN Temp dumb algorithm
-		Move bestMove = null;
-		int bestAmount = -1;
-		Move currentMove = new Move();
-		for(int i = 0; i < super.size; i++)
-			for(int j = 0; j < super.size; j++)
-			{
-				currentMove.i = i;
-				currentMove.j = j;
-
-				int amount = board.numberOfBoxesFlipped(currentMove, true);
-				if(amount > bestAmount)
-				{
-					bestAmount = amount;
-					bestMove = new Move(i, j);
-				}
-			}
-
-		if(bestAmount <= 0)
-			// This method has to return null when it's not possible to play
-			return null;
-		// END Temp dumb algorithm
+		Move bestMove = alphaBeta.alphaBeta(board);
 
 		// Apply our move to the board
-		board.applyMove(bestMove, true);
+		if(bestMove != null)
+			board.applyMove(bestMove, true);
 
 		return bestMove;
 	}

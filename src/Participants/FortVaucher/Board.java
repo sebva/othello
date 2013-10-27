@@ -21,19 +21,21 @@ public class Board
 	 * /!\ [Column][Row] /!\
 	 * /!\  /!\ /!\ /!\  /!\
 	 */
-	private Color[][] board;
-	private final Color ourColor;
-	private final Color theirColor;
+	private byte[][] board;
+	private final byte ourColor;
+	private final byte theirColor;
 
 	// Constants
 	public final int nbBoxes;
 
-	public enum Color
+	public class Color
 	{
-		RED, BLUE, NOTHING
+		public static final byte RED = 0;
+		public static final byte BLUE = 1;
+		public static final byte NOTHING = 2;
 	}
 
-	public Board(Color ourColor, int nbBoxes)
+	public Board(byte ourColor, int nbBoxes)
 	{
 		this(ourColor, nbBoxes, true);
 
@@ -49,9 +51,9 @@ public class Board
 		board[nbBoxes / 2][nbBoxes / 2 - 1] = Color.RED;
 	}
 
-	private Board(Color ourColor, int nbBoxes, boolean dummy)
+	private Board(byte ourColor, int nbBoxes, boolean dummy)
 	{
-		board = new Color[nbBoxes][nbBoxes];
+		board = new byte[nbBoxes][nbBoxes];
 		this.ourColor = ourColor;
 		this.theirColor = ourColor == Color.BLUE ? Color.RED : Color.BLUE;
 		this.nbBoxes = nbBoxes;
@@ -91,9 +93,9 @@ public class Board
 	public void applyMove(Move move, boolean fromOurselves)
 	{
 		// The color to which the bubbles will be moved to
-		Color flipColor = fromOurselves ? ourColor : theirColor;
+		byte flipColor = fromOurselves ? ourColor : theirColor;
 		// The current color of the bubbles
-		Color otherColor = fromOurselves ? theirColor : ourColor;
+		byte otherColor = fromOurselves ? theirColor : ourColor;
 
 		// Flip the move bubble
 		board[move.i][move.j] = flipColor;
@@ -137,7 +139,7 @@ public class Board
 				currentMove.j = j;
 
 				if(numberOfBoxesFlipped(currentMove, fromOurselves) > 0)
-					movesList.add(currentMove);
+					movesList.add(new Move(currentMove.i, currentMove.j));
 			}
 
 		return movesList;
@@ -156,7 +158,7 @@ public class Board
 			return 0;
 
 		int amount = 0;
-		Color flipColor = fromOurselves ? theirColor : ourColor;
+		byte flipColor = fromOurselves ? theirColor : ourColor;
 
 		// Check in all 8 directions
 		for(int i = -1; i <= 1; i++)
@@ -167,7 +169,7 @@ public class Board
 		return amount;
 	}
 
-	private int numberOfBoxesFlippedInDirection(Move move, int colIncrement, int rowIncrement, Color flipColor)
+	private int numberOfBoxesFlippedInDirection(Move move, int colIncrement, int rowIncrement, byte flipColor)
 	{
 		int col = move.i, row = move.j;
 		int amount = 0;
@@ -193,8 +195,29 @@ public class Board
 			return amount;
 	}
 
-	public Color[][] getBoard()
+	public byte[][] getBoard()
 	{
 		return board;
+	}
+
+	public boolean isGameOver()
+	{
+		Move currentMove = new Move();
+		for(int i = 0; i < nbBoxes; i++)
+			for(int j = 0; j < nbBoxes; j++)
+			{
+				currentMove.i = i;
+				currentMove.j = j;
+
+				if(numberOfBoxesFlipped(currentMove, true) > 0)
+					return false;
+			}
+
+		return true;
+	}
+
+	public double evaluation(boolean fromOurselves)
+	{
+		return Evaluation.evaluateBoard(this, (fromOurselves ? ourColor : theirColor));
 	}
 }

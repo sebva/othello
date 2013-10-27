@@ -20,23 +20,21 @@ public class Evaluation
 		};
 
 
-	public static int evaluateBoard(Board board, Color evaluatedPlayerColor)
+	public static double evaluateBoard(Board board, byte evaluatedPlayerColor)
 	{
 		int evaluation = 0;
 		for (int i=0; i < 8; i++)
 		{
 			for (int j=0; j < 8; j++)
 			{
-			   	Color piece = board.getBoard()[j][i];
+			   	byte piece = board.getBoard()[j][i];
 			   	if (piece != Color.NOTHING)
 			   	{
 				   	int add = boardWeights[j][i];
 					add *= (piece == evaluatedPlayerColor ? 1 : -1);
 				   	evaluation += add;
-					System.out.print(piece + "" + add + " ");
 			   	}
 			}
-			System.out.println("");
 		}
 		return evaluation;
 	}
