@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="4" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d89e5f69-a1a7-408b-911c-8366ea071e9d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Participants/FortVaucher/AlphaBeta.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Participants/FortVaucher/AlphaBeta.java" afterPath="$PROJECT_DIR$/src/Participants/FortVaucher/AlphaBeta.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Participants/FortVaucher/Board.java" afterPath="$PROJECT_DIR$/src/Participants/FortVaucher/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Participants/FortVaucher/Evaluation.java" afterPath="$PROJECT_DIR$/src/Participants/FortVaucher/Evaluation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Participants/FortVaucher/Joueur.java" afterPath="$PROJECT_DIR$/src/Participants/FortVaucher/Joueur.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Othello.iml" afterPath="$PROJECT_DIR$/Othello.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Othello.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382379492975" ignored="false" />
-    <file path="/Dummy.txt" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382901524800" ignored="false" />
-    <file path="/Joueur.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382905376824" ignored="false" />
+    <file path="/fragment.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382911083840" ignored="false" />
+    <file path="/Dummy.txt" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382910319892" ignored="false" />
+    <file path="/Joueur.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382912231115" ignored="false" />
     <file path="/Tournoi.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1381483425080" ignored="false" />
     <file path="/a.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382379409581" ignored="false" />
     <file path="/sample.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382379241043" ignored="false" />
-    <file path="/Board.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382906801730" ignored="false" />
-    <file path="/AlphaBeta.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382907546650" ignored="false" />
+    <file path="/Board.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382912564866" ignored="false" />
+    <file path="/AlphaBeta.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382912212352" ignored="false" />
     <file path="/Move.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382904318042" ignored="false" />
-    <file path="/Evaluation.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382905668670" ignored="false" />
+    <file path="/Evaluation.java" changelist="d89e5f69-a1a7-408b-911c-8366ea071e9d" time="1382912576990" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,30 +85,28 @@
       <file leaf-file-name="Joueur.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Participants/FortVaucher/Joueur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0">
+            <state line="36" column="56" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Board.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Participants/FortVaucher/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="13" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
+            <state line="197" column="27" selection-start="4765" selection-end="4765" vertical-scroll-proportion="3.6125138">
               <folding>
-                <element signature="e#3118#3124#0" expanded="true" />
+                <element signature="e#2941#2947#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlphaBeta.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AlphaBeta.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Participants/FortVaucher/AlphaBeta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="22" selection-start="303" selection-end="303" vertical-scroll-proportion="0.27991217">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="41" column="46" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,7 +114,7 @@
       <file leaf-file-name="Evaluation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Participants/FortVaucher/Evaluation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="52" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0">
+            <state line="9" column="25" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -150,11 +149,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/Participants/Defi/Joueur.java" />
         <option value="$PROJECT_DIR$/src/Tournoi/Tournoi.java" />
-        <option value="$PROJECT_DIR$/src/Participants/FortVaucher/Evaluation.java" />
-        <option value="$PROJECT_DIR$/src/Participants/FortVaucher/Joueur.java" />
         <option value="$PROJECT_DIR$/src/Othello/Move.java" />
-        <option value="$PROJECT_DIR$/src/Participants/FortVaucher/Board.java" />
         <option value="$PROJECT_DIR$/src/Participants/FortVaucher/AlphaBeta.java" />
+        <option value="$PROJECT_DIR$/src/Participants/FortVaucher/Joueur.java" />
+        <option value="$PROJECT_DIR$/src/Participants/FortVaucher/Evaluation.java" />
+        <option value="$PROJECT_DIR$/src/Participants/FortVaucher/Board.java" />
       </list>
     </option>
   </component>
@@ -224,8 +223,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -324,12 +323,12 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -351,7 +350,7 @@
       <recent name="C:\Users\sebastie.vaucher\IdeaProjects\Othello\src\Participants" />
     </key>
   </component>
-  <component name="RunManager" selected="Applet.Othello">
+  <component name="RunManager" selected="Remote.Othello">
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -409,23 +408,22 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="Othello" type="Applet" factoryName="Applet">
-      <module name="Othello" />
-      <option name="MAIN_CLASS_NAME" value="Tournoi.Tournoi" />
-      <option name="HTML_FILE_NAME" value="$PROJECT_DIR$/out/production/Othello/tournoi.html" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="700" />
-      <option name="HEIGHT" value="500" />
-      <option name="POLICY_FILE" value="file://$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+    <configuration default="false" name="Othello" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="5005" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Applet.Othello" />
+      <item index="0" class="java.lang.String" itemvalue="Remote.Othello" />
     </list>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
@@ -503,9 +501,10 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991462" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -515,12 +514,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29669157" sideWeight="0.678762" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29669157" sideWeight="0.6008538" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15481171" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -584,20 +583,17 @@
     <MESSAGE value="Add state related methods" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Othello/Joueur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="44" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Participants/FortVaucher/Joueur.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="28" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
@@ -609,7 +605,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="38" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#3118#3124#0" expanded="true" />
+            <element signature="e#2941#2947#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -670,13 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Participants/FortVaucher/Evaluation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="52" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Othello/Move.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="33" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0">
@@ -684,27 +673,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_25/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="325" column="23" selection-start="10184" selection-end="10184" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Participants/FortVaucher/Evaluation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="25" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Participants/FortVaucher/AlphaBeta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="46" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Participants/FortVaucher/Joueur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0">
+        <state line="36" column="56" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Participants/FortVaucher/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="13" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
+        <state line="197" column="27" selection-start="4765" selection-end="4765" vertical-scroll-proportion="3.6125138">
           <folding>
-            <element signature="e#3118#3124#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Participants/FortVaucher/AlphaBeta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="22" selection-start="303" selection-end="303" vertical-scroll-proportion="0.27991217">
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2941#2947#0" expanded="true" />
           </folding>
         </state>
       </provider>

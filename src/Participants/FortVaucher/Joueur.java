@@ -9,7 +9,6 @@ public class Joueur extends Othello.Joueur
 {
 
 	private Board board;
-	private AlphaBeta alphaBeta;
 
 	/**
 	 * @param depth Alpha-beta algorithm depth
@@ -20,7 +19,7 @@ public class Joueur extends Othello.Joueur
 		super(depth, playerID);
 
 		board = new Board(playerID == 0 ? Board.Color.RED : Board.Color.BLUE, super.size);
-		alphaBeta = new AlphaBeta(super.size);
+		board.initBoard();
 	}
 
 	/**
@@ -35,7 +34,7 @@ public class Joueur extends Othello.Joueur
 		if(move != null)
 			board.applyMove(move, false);
 
-		Move bestMove = alphaBeta.alphaBeta(board);
+		Move bestMove = AlphaBeta.alphaBeta(board, depth);
 
 		// Apply our move to the board
 		if(bestMove != null)

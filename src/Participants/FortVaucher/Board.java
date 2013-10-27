@@ -37,8 +37,14 @@ public class Board
 
 	public Board(byte ourColor, int nbBoxes)
 	{
-		this(ourColor, nbBoxes, true);
+		board = new byte[nbBoxes][nbBoxes];
+		this.ourColor = ourColor;
+		this.theirColor = ourColor == Color.BLUE ? Color.RED : Color.BLUE;
+		this.nbBoxes = nbBoxes;
+	}
 
+	public void initBoard()
+	{
 		// Board initialization
 		for (int i = 0; i < nbBoxes; i++)
 			for (int j = 0; j < nbBoxes; j++)
@@ -49,26 +55,6 @@ public class Board
 		board[nbBoxes / 2 - 1][nbBoxes / 2 - 1] = Color.BLUE;
 		board[nbBoxes / 2 - 1][nbBoxes / 2] = Color.RED;
 		board[nbBoxes / 2][nbBoxes / 2 - 1] = Color.RED;
-	}
-
-	private Board(byte ourColor, int nbBoxes, boolean dummy)
-	{
-		board = new byte[nbBoxes][nbBoxes];
-		this.ourColor = ourColor;
-		this.theirColor = ourColor == Color.BLUE ? Color.RED : Color.BLUE;
-		this.nbBoxes = nbBoxes;
-	}
-
-	@Override
-	protected Board clone()
-	{
-		Board board2 = new Board(ourColor, nbBoxes, true);
-
-		for (int i = 0; i < nbBoxes; i++)
-			for (int j = 0; j < nbBoxes; j++)
-				board2.board[i][j] = this.board[i][j];
-
-		return board2;
 	}
 
 	/**
@@ -122,7 +108,10 @@ public class Board
 
 	public Board applyMoveToNewBoard(Move move, boolean fromOurselves)
 	{
-		Board board2 = this.clone();
+		Board board2 = new Board(ourColor, nbBoxes);
+
+		for (int i = 0; i < nbBoxes; i++)
+			System.arraycopy(this.board[i], 0, board2.board[i], 0, nbBoxes);
 
 		board2.applyMove(move, fromOurselves);
 		return board2;
@@ -195,11 +184,6 @@ public class Board
 			return amount;
 	}
 
-	public byte[][] getBoard()
-	{
-		return board;
-	}
-
 	public boolean isGameOver()
 	{
 		Move currentMove = new Move();
@@ -216,8 +200,8 @@ public class Board
 		return true;
 	}
 
-	public double evaluation(boolean fromOurselves)
+	public double evaluate(boolean fromOurselves)
 	{
-		return Evaluation.evaluateBoard(this, (fromOurselves ? ourColor : theirColor));
+		return Evaluation.evaluateBoard(board, (fromOurselves ? ourColor : theirColor));
 	}
 }

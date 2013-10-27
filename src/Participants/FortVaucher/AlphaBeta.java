@@ -2,8 +2,6 @@ package Participants.FortVaucher;
 
 import Othello.Move;
 
-import java.util.concurrent.ExecutorService;
-
 /**
  * Created with IntelliJ IDEA.
  * User: Sébastien
@@ -13,79 +11,47 @@ import java.util.concurrent.ExecutorService;
  */
 public class AlphaBeta
 {
-	private int depth;
-
-	public AlphaBeta(int depth)
-	{
-		this.depth = depth;
-	}
-
-	public Move alphaBeta(Board root)
+	public static Move alphaBeta(Board root, int depth)
 	{
 		Move move = new Move(-100, -100);
-		max(root, Double.POSITIVE_INFINITY, depth, move);
+		minmax(root, 1, Double.POSITIVE_INFINITY, depth, move);
 		if(move.i != -100 && move.j != -100)
 			return move;
 		else
 			return null;
 	}
 
-	public double max(Board root, double parentMin, int depth, Move outMove)
+	private static double minmax(Board root, int minOrMax, double parentValue, int depth, Move outMove)
 	{
+		final boolean fromOurselves = (minOrMax == 1);
+
 		if(depth == 0 || root.isGameOver())
-			return root.evaluation(true);
+			return root.evaluate(true);
 
-		double maxVal = Double.NEGATIVE_INFINITY;
-		Move maxOp = null;
+		double optVal = minOrMax * Double.NEGATIVE_INFINITY;
+		Move optOp = null;
 
-		for(Move op : root.getPossibleMoves(true))
+		for(Move op : root.getPossibleMoves(fromOurselves))
 		{
-			Board newBoard = root.applyMoveToNewBoard(op, true);
-			double val = min(newBoard, maxVal, depth -1, null);
-			if(val > maxVal)
+			double val;
 			{
-				maxVal = val;
-				maxOp = op;
-				if(maxVal > parentMin)
+				Board newBoard = root.applyMoveToNewBoard(op, fromOurselves);
+				val = minmax(newBoard, -minOrMax, optVal, depth - 1, null);
+			}
+			if(val * minOrMax > optVal * minOrMax)
+			{
+				optVal = val;
+				optOp = op;
+				if(optVal * minOrMax > parentValue * minOrMax)
 					break;
 			}
 		}
 
-		if(maxOp != null && outMove != null)
+		if(optOp != null && outMove != null)
 		{
-			outMove.i = maxOp.i;
-			outMove.j = maxOp.j;
+			outMove.i = optOp.i;
+			outMove.j = optOp.j;
 		}
-		return maxVal;
-	}
-
-	private double min(Board root, double parentMax, int depth, Move outMove)
-	{
-		if(depth == 0 || root.isGameOver())
-			root.evaluation(false);
-
-		double minVal = Double.POSITIVE_INFINITY;
-		Move minOp = null;
-
-		for(Move op : root.getPossibleMoves(false))
-		{
-			Board newBoard = root.applyMoveToNewBoard(op, false);
-			double val = max(newBoard, minVal, depth -1, null);
-
-			if(val < minVal)
-			{
-				minVal = val;
-				minOp = op;
-				if(minVal < parentMax)
-					break;
-			}
-		}
-
-		if(minOp != null && outMove != null)
-		{
-			outMove.i = minOp.i;
-			outMove.j = minOp.j;
-		}
-		return minVal;
+		return optVal;
 	}
 }

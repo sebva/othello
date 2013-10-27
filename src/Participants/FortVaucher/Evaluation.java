@@ -7,7 +7,7 @@ import Participants.FortVaucher.Board.Color;
  */
 public class Evaluation
 {
-	private static int[][] boardWeights =
+	private static final int[][] boardWeights =
 		{
 		{120, -20, 20,  5,  5, 20, -20, 120},
 		{-20, -40, -5, -5, -5, -5, -40, -20},
@@ -20,14 +20,14 @@ public class Evaluation
 		};
 
 
-	public static double evaluateBoard(Board board, byte evaluatedPlayerColor)
+	public static double evaluateBoard(byte[][] board, byte evaluatedPlayerColor)
 	{
 		int evaluation = 0;
 		for (int i=0; i < 8; i++)
 		{
 			for (int j=0; j < 8; j++)
 			{
-			   	byte piece = board.getBoard()[j][i];
+			   	byte piece = board[j][i];
 			   	if (piece != Color.NOTHING)
 			   	{
 				   	int add = boardWeights[j][i];
