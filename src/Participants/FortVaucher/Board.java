@@ -238,6 +238,20 @@ public class Board
 	 */
 	public double evaluate(boolean fromOurselves)
 	{
-		return Evaluation.evaluateBoard(board, (fromOurselves ? ourColor : theirColor));
+		return Evaluation.evaluateBoard(this, (fromOurselves ? ourColor : theirColor));
+	}
+
+	/**
+	 *
+	 * @return the board in a byte array form
+	 */
+	public byte[][] getBoard()
+	{
+		return board;
+	}
+
+	public byte getOurColor()
+	{
+		return ourColor;
 	}
 }
