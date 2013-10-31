@@ -61,7 +61,7 @@ public class Evaluation
 		}
 		else if ((playedCells >= midGameThreshold) && (playedCells <= 56)) // Mid game stage
 		{
-			coeffWeightMatrix = 1.5;
+			coeffWeightMatrix = 1.2;
 			coeffBorder = 0.3;
 			coeffNumberPawns = 0.0;
 			coeffParity = 3.0;
